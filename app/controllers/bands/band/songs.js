@@ -32,7 +32,7 @@ export default class BandsBandSongsController extends Controller {
       rating: 0,
       band: this.model,
     });
-    await record.save(); // On vient d'enregistrer au backend notre nouvelle entrée
+    await record.save();
 
     this.isAddingSong = false;
     this.selectSong = {
@@ -51,6 +51,15 @@ export default class BandsBandSongsController extends Controller {
   @action
   setMaxRating(song) {
     song.set('rating', 10);
+    song.save();
+  }
+
+  @action
+  setRating(rating, song) {
+    console.log('Action du controller');
+    console.log(rating, song);
+
+    song.set('rating', rating);
     song.save();
   }
 }

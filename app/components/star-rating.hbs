@@ -1,5 +1,5 @@
 {{#each this.stars as |star|}}
-<button {{on 'click' (fn this.setRating star.rating)}}>
+<button type="button" {{on 'click' (fn this.setRating star.rating)}}>
      {{!-- (fn this.action paramètre1 paramètre2 ...) --}}
     {{#if star.isFull}}
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="h-4 fill-current text-blue-400 mx-1">
